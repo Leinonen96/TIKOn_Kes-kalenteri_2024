@@ -1,8 +1,11 @@
 #calendar-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 saraketta */
-    width: 100%; /* Täysi leveys */
+    display: grid; /* Asetetaan näyttömuodoksi grid */
+    grid-template-columns: repeat(3, 1fr); /* Kolme samankokoista saraketta */
     gap: 10px; /* Väli solujen välillä */
+    padding: 20px; /* Tyhjä tila reunoilla */
+    margin: auto; /* Keskittää ruudukon vaakasuunnassa */
+    width: 90%; /* Asettaa leveydeksi 90% estääkseen vaakasuoran ylivuodon */
+    max-width: 1100px; /* Ruudukon säiliön maksimileveys */
 }
 
 .calendar-cell {
