@@ -1,36 +1,66 @@
+html, body {
+    height: 100%; /* Täysi korkeus sivulle */
+    margin: 0; /* Poistaa oletusmarginaalit */
+    padding: 0; /* Poistaa oletuspaddingit */
+    display: flex;
+    flex-direction: column; /* Asettaa elementit pystysuunnassa */
+}
+
+.centered-container {
+    flex: 1; /* Vie kaiken jäljellä olevan tilan, mutta jättää tilaa footerille */
+    display: flex; /* Asettaa flexboxin käyttöön */
+    flex-direction: column; /* Sisältö pystysuunnassa */
+    align-items: center; /* Keskittää kaikki alielementit horisontaalisesti */
+    justify-content: flex-start; /* Asettaa sisällön yläosaan, ei keskitä vertikaalisesti */
+    width: 100%; /* Koko näytön leveys */
+    padding: 20px; /* Tilaa ympärillä */
+}
+
 #calendar-grid {
-    display: grid; /* Asetetaan näyttömuodoksi grid */
-    grid-template-columns: repeat(3, 1fr); /* Kolme samankokoista saraketta */
-    gap: 10px; /* Väli solujen välillä */
-    padding: 20px; /* Tyhjä tila reunoilla */
-    margin: auto; /* Keskittää ruudukon vaakasuunnassa */
-    width: 90%; /* Asettaa leveydeksi 90% estääkseen vaakasuoran ylivuodon */
-    max-width: 1100px; /* Ruudukon säiliön maksimileveys */
+    display: grid; /* Asetetaan näyttömuodoksi grid, joka määrittelee elementin ruudukkona */
+    grid-template-columns: repeat(3, 1fr); /* Kolme samankokoista saraketta käyttäen fr yksikköä */
+    gap: 10px; /* Asettaa 10 pikselin välin kaikkien solujen väliin */
+    padding: 20px; /* Lisää 20 pikselin tyhjän tilan ruudukon sisäpuolelle */
+    margin: auto; /* Keskittää ruudukon sivusuunnassa asettamalla automaattisen marginaalin */
+    width: 90%; /* Asettaa ruudukon leveydeksi 90% vanhemman elementin leveydestä */
+    max-width: 1100px; /* Rajaa ruudukon maksimileveyden 1100 pikseliin */
 }
 
 .calendar-cell {
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    aspect-ratio: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background-color: #f0f0f0; /* Asettaa taustavärin vaaleanharmaaksi */
+    border: 1px solid #ccc; /* Asettaa 1 pikselin paksuisen, harmaan reunuksen */
+    aspect-ratio: 1; /* Määrittää, että elementin leveys ja korkeus ovat samat */
+    display: flex; /* Asettaa elementin näyttömuodoksi flexboxin */
+    align-items: center; /* Keskittää sisällön pystysuunnassa */
+    justify-content: center; /* Keskittää sisällön vaakasuunnassa */
 }
 
 .calendar-cell-content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: absolute; /* Sijoittaa sisällön suhteessa lähimpään suhteellisesti sijoitettuun esivanhempaan */
+    top: 0; /* Asettaa sisällön yläreunan kiinni kontin yläreunaan */
+    left: 0; /* Asettaa sisällön vasemman reunan kiinni kontin vasempaan reunaan */
+    right: 0; /* Asettaa sisällön oikean reunan kiinni kontin oikeaan reunaan */
+    bottom: 0; /* Asettaa sisällön alareunan kiinni kontin alareunaan */
+    display: flex; /* Asettaa elementin näyttömuodoksi flexboxin */
+    justify-content: center; /* Keskittää sisällön vaakasuunnassa */
+    align-items: center; /* Keskittää sisällön pystysuunnassa */
+}
+
+footer {
+    position: fixed; /* Asettaa footerin kiinni sivun alareunaan */
+    bottom: 0; /* Asettaa footerin alareunaan */
+    left: 0; /* Asettaa footerin vasempaan reunaan */
+    right: 0; /* Asettaa footerin oikeaan reunaan */
+    text-align: center; /* Keskittää footerin tekstin */
+    padding: 10px 0; /* Lisää paddingia ylä- ja alapuolelle */
+    width: 100%; /* Täysi leveys */
+    background-color: #f0f0f0; /* Taustaväri */
+    
 }
 
 /* Media Query mobiililaitteille */
 @media (max-width: 600px) {
     #calendar-grid {
-        grid-template-columns: 1fr; /* Yksi sarake mobiilikoossa */
+        grid-template-columns: 1fr; /* Asettaa yhden sarakkeen mobiililaitteiden näyttökokoon */
     }
 }
