@@ -24,3 +24,10 @@
     justify-content: center;
     align-items: center;
 }
+
+/* Media Query mobiililaitteille */
+@media (max-width: 600px) {
+    #calendar-grid {
+        grid-template-columns: 1fr; /* Yksi sarake mobiilikoossa */
+    }
+}
