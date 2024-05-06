@@ -1,0 +1,26 @@
+#calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 saraketta */
+    width: 100%; /* Täysi leveys */
+    gap: 10px; /* Väli solujen välillä */
+}
+
+.calendar-cell {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calendar-cell-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
