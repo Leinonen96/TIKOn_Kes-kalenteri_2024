@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
         cell.textContent = `Viikko ${i}`;
         // Viikko solun klikkaus eventti
         // Tämän sisälle laitettaan tapahtuman kutsu
-        cell.onclick = function() { alert(`Tapahtumat viikolle ${i}`); }; 
+        cell.onclick = function() { alert(`Tapahtumat viikolle ${i}`); }; // Placeholder alert, korvataan myöhemmin
 
         gridContainer.appendChild(cell);
     }
