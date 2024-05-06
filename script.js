@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     const gridContainer = document.getElementById('calendar-grid');
-    const totalCells = 25;
+    const totalCells = 33;
 
     // Viikko grid solu generointi for loopilla
-    for (let i = 13; i <= totalCells; i++) {
+    for (let i = 21; i <= totalCells; i++) {
         const cell = document.createElement('div');
         cell.classList.add('calendar-cell');
 
