@@ -71,18 +71,18 @@ footer {
 
 .dialog-visible {
   display: block;
-  position: fixed; /* Kiinteä sijainti, pysyy paikallaan vierityksen aikana */
+  position: fixed;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%); /* Keskitetään täsmälleen näytön keskelle */
+  transform: translate(-50%, -50%);
   background-color: aliceblue;
   border: 2px solid #ccc;
-  z-index: 1000; /* Varmistaa, että dialogi on muiden elementtien yläpuolella */
+  z-index: 1000;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: auto; /* Säädettävä leveys sisällön mukaan */
-  min-width: 40%; /* Estää dialogia olemasta liian kapea */
-  max-width: 600px; /* Estää dialogia olemasta liian leveä */
-
+  width: auto;
+  min-width: 40%;
+  max-width: 600px;
+  border-radius: 10px; /* Lisätty pyöristetyt reunat */
 }
 
 .dialog-content {
@@ -132,7 +132,7 @@ footer {
     right: 5%;  /* Sijoitettu oikeaan yläkulmaan */
     font-size: 25px;
     cursor: pointer;
-    background-color: white; /* Taustaväri, valinnainen */
+    background-color: rgba(45, 58, 77, 0.315); /* Taustaväri, valinnainen */
     border: none; /* Poistaa reunan, jos sellainen on */
     padding: 5px 10px; /* Pieni padding parantamaan painikkeen ulkoasua */
     border-radius: 5px; /* Pyöristetyt kulmat */
