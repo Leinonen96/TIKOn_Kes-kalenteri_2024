@@ -84,11 +84,24 @@ footer {
 }
 
 .dialog-content {
-  position: relative;
+    position: relative; /* Tämä on jo oikein asetettu */
+    display: flex;      /* Käytä flexboxia keskittämiseen */
+    flex-direction: column; /* Asetetaan lapset pystysuunnassa */
+    justify-content: center; /* Keskittää lapset pystysuunnassa */
+    align-items: center; /* Keskittää lapset vaakasuunnassa */
+    width: 100%;        /* Täyttää koko saatavilla olevan tilan */
+    height: 100%;       /* Täyttää koko saatavilla olevan tilan */
+}
+
+#event-map, #event-image {
+    /* Nämä tyylit pitävät elementit keskitettyinä flexbox-säännön ansiosta */
+    width: 100%;  /* Käytä 100% leveydestä */
+    max-width: 1000px; /* Maksimileveys */
+    height: auto; /* Automaattinen korkeus aspect-ratio mukaan */
+    object-fit: cover; /* Täyttää koko tilan leikkaamalla ylimääräiset osat */
 }
 
 #event-map {
-aspect-ratio: 1;
     width: 100%;
     height: 200px;
     min-width: 300px;
@@ -97,12 +110,16 @@ aspect-ratio: 1;
     max-height: 600px; 
 }
 
-#event-image  {
+#event-image {
+    aspect-ratio: 1 / 1;
     width: 100%;
-    min-width: 300px;
-    max-width: 100%;
-    min-height: 500px; 
-    max-height: 600px; 
+    max-width: 100%;    /* Maksimileveys, varmistaa että kuva ei veny yli kontin leveyden */
+    min-width: 300px;   /* Minimileveys, varmistaa että kuva ei kutistu alle 300px */
+    height: auto;       /* Korkeus määräytyy automaattisesti mittasuhteen mukaan */
+    min-height: 300px;  /* Minimikorkeus, varmistaa että kuva ei kutistu alle 300px */
+    max-height: 1000px;
+    max-width: 1000px;  /* Voi rajoittaa kuvan korkeutta */
+    object-fit: cover  /* Täyttää kontin pitäen mittasuhteen, voi leikata ylimääräiset osat */
 }
 
 .close-button {
