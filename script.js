@@ -35,6 +35,10 @@ function openDialog(weekNumber) {
     .catch(error => console.error('Error loading the event data:', error));
 }
 
+function closeDialog() {
+    document.getElementById('event-dialog').classList.replace('dialog-visible', 'dialog-hidden');
+}
+
 async function loadMap(coordinates) {
     const [lat, lng] = coordinates.split(", ");
     const position = { lat: parseFloat(lat), lng: parseFloat(lng) };
