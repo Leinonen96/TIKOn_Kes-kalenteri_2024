@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KesäKalenteri</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1></h1>
+    </header>
+
+    <main>
+        <div id="developer-tools" style= "devTools">
+            <label for="fake-date-toggle">Fake Date:</label>
+            <input type="checkbox" id="fake-date-toggle">
+        </div>
+        
+        <!-- Dialogi-popup-ikkuna-->
+        <div id="event-dialog" class="dialog-hidden">
+            <div class="dialog-content">
+                <span class="close-button">&times;</span>
+                <h2 id="event-title">Tapahtuman Otsikko</h2>
+                <img id="event-image" src="#" alt="Tapahtuman kuva">
+                <p id="event-description">Tapahtuman kuvaus</p>
+                <div id="event-map"></div>
+                <button id="closeButton1" onclick="closeDialog()">Sulje</button>
+            </div>
+        </div>
+
+        <div class="centered-container">
+            <h1>Kesäkalenteri 2024</h1> <!-- Otsikko -->
+            <div id="calendar-grid">
+                <!-- Kalenterin ruudut luodaan tässä -->
+            </div>
+        </div>
+
+
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 - Tuomas Leinonen, Aku Ihamuotila, Saku Karttunen</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJJ1nHT2XhhV-RxQjR4CZsoz2fPHRaq8M&callback=initMap"></script>
+</body>
+
+</html>
