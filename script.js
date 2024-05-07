@@ -2,22 +2,48 @@ document.addEventListener('DOMContentLoaded', function() {
     const gridContainer = document.getElementById('calendar-grid');
     const totalCells = 33;
 
-    // Viikko grid solu generointi for loopilla
+    // Generate week grid cells
     for (let i = 21; i <= totalCells; i++) {
         const cell = document.createElement('div');
         cell.classList.add('calendar-cell');
         cell.textContent = `Viikko ${i}`;
+
+        // Bind a click handler that checks condition before opening dialog
         cell.onclick = function() {
+            checkConditionAndApplyImage(i, cell);
             openDialog(i);
         };
+
         gridContainer.appendChild(cell);
     }
 
     document.querySelector('.close-button').addEventListener('click', function() {
-        document.getElementById('event-dialog').classList.replace('dialog-visible', 'dialog-hidden');
+        closeDialog();
     });
-    
 });
+
+function checkConditionAndApplyImage(index, cell) {
+    let boolean1 = true
+    if (boolean1) {
+        applyImageToCell(cell, index);
+    }
+}
+
+function applyImageToCell(cell, index) {
+    // Adding an image to the cell
+    const imageUrl = `Kalenteri_kuvat/${index}.png`; // Assume this is the correct path
+    const imgElement = document.createElement('img');
+    imgElement.src = imageUrl;
+    imgElement.alt = 'Kuva viikolle ' + index;
+
+    // Apply CSS to ensure the image fits within the cell
+    imgElement.style.width = '100%';   // Makes the image width equal to the cell width
+    imgElement.style.height = 'auto';  // Keeps the image height proportional
+    imgElement.style.maxHeight = '100%'; // Ensures the image height does not exceed the cell height
+
+    cell.innerHTML = ''; // Clear the cell content
+    cell.appendChild(imgElement); // Set the cell image to the image element
+}
 
 function openDialog(weekNumber) {
     fetch('events.json')
@@ -62,13 +88,4 @@ async function loadMap(coordinates) {
         position: position,
         title: "Event Location"  // Voit mukauttaa otsikkoa
     });
-}
-
-function applyImageToCell(cell, index) {
-    // Kuvan lisääminen soluun
-    const imageUrl = `Kalenteri_kuvat/${index}.png`; // Oletettu polku kuvalle
-    const imgElement = document.createElement('img');
-    imgElement.src = imageUrl;
-    imgElement.alt = 'Kuva viikolle ' + index;
-    cell.appendChild(imgElement);
 }
