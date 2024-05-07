@@ -75,7 +75,6 @@ footer {
   background-color: rgb(255, 255, 255);
   border: 2px solid #ccc;
   z-index: 1000; /* Varmistaa, että dialogi on muiden elementtien yläpuolella */
-  padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: auto; /* Säädettävä leveys sisällön mukaan */
   min-width: 60%; /* Estää dialogia olemasta liian kapea */

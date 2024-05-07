@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.close-button').addEventListener('click', function() {
         document.getElementById('event-dialog').classList.replace('dialog-visible', 'dialog-hidden');
     });
+    
 });
 
 function openDialog(weekNumber) {
@@ -61,4 +62,13 @@ async function loadMap(coordinates) {
         position: position,
         title: "Event Location"  // Voit mukauttaa otsikkoa
     });
+}
+
+function applyImageToCell(cell, index) {
+    // Kuvan lisääminen soluun
+    const imageUrl = `Kalenteri_kuvat/${index}.png`; // Oletettu polku kuvalle
+    const imgElement = document.createElement('img');
+    imgElement.src = imageUrl;
+    imgElement.alt = 'Kuva viikolle ' + index;
+    cell.appendChild(imgElement);
 }
