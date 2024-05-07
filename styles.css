@@ -157,3 +157,10 @@ footer {
     grid-template-columns: 1fr; /* Asettaa yhden sarakkeen mobiililaitteiden näyttökokoon */
   }
 }
+body {
+  background-image: url('Kalenteri_kuvat/Helsinki.png');
+  background-size: cover; /* Taustakuvan kokoa muutetaan siten, että se peittää koko näytön säilyttäen silti alkuperäisen kuvasuhteen */
+  background-repeat: no-repeat; /* Estää taustakuvan toiston */
+  background-attachment: fixed; /* Kiinnittää taustakuvan näytön yläosaan, jolloin se ei liiku vieritettäessä */
+}
+
