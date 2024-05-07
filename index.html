@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,22 +8,33 @@
     <title>Otsikko</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header>
         <h1>Otsikko</h1>
     </header>
 
     <main>
+        <!-- Dialogi-popup-ikkuna-->
+        <div id="event-dialog" class="dialog-hidden">
+            <div class="dialog-content">
+                <span class="close-button">&times;</span>
+                <h2 id="event-title">Tapahtuman Otsikko</h2>
+                <img id="event-image" src="#" alt="Tapahtuman kuva">
+                <p id="event-description">Tapahtuman kuvaus</p>
+                <div id="event-map" style="width:100%;height:200px;"></div>
+            </div>
+        </div>
+
         <div class="centered-container">
-            <h1>Kesäkalenteri 2024</h1>  <!-- Otsikko -->
+            <h1>Kesäkalenteri 2024</h1> <!-- Otsikko -->
             <div id="calendar-grid">
                 <!-- Kalenterin ruudut luodaan tässä -->
             </div>
         </div>
-        
 
     </main>
-    
+
     <footer>
         <p>&copy; Vuosi - Tekijät</p>
     </footer>
