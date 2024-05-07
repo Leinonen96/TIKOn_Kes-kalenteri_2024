@@ -59,8 +59,11 @@ footer {
 }
 
 
+
+
+/* Dialogi osio */
 .dialog-hidden {
-    
+    display: none;
 }
 
 .dialog-visible {
