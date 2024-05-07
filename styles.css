@@ -77,8 +77,8 @@ footer {
   z-index: 1000; /* Varmistaa, että dialogi on muiden elementtien yläpuolella */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: auto; /* Säädettävä leveys sisällön mukaan */
-  min-width: 60%; /* Estää dialogia olemasta liian kapea */
-  max-width: 1000px; /* Estää dialogia olemasta liian leveä */
+  min-width: 40%; /* Estää dialogia olemasta liian kapea */
+  max-width: 600px; /* Estää dialogia olemasta liian leveä */
 
 }
 
