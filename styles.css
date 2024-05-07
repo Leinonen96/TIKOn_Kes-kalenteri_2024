@@ -132,6 +132,12 @@ footer {
   cursor: pointer;
 }
 
+#closeButton1 {
+  font-size: 25px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
 .calendar-cell:hover {
   background-color: #e0e0e0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
