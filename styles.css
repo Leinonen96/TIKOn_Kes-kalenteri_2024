@@ -51,15 +51,18 @@ body {
 }
 
 footer {
-  position: fixed; /* Asettaa footerin kiinni sivun alareunaan */
-  bottom: 0; /* Asettaa footerin alareunaan */
-  left: 0; /* Asettaa footerin vasempaan reunaan */
-  right: 0; /* Asettaa footerin oikeaan reunaan */
-  text-align: center; /* Keskittää footerin tekstin */
-  padding: 10px 0; /* Lisää paddingia ylä- ja alapuolelle */
-  width: 100%; /* Täysi leveys */
-  background-color: #f0f0f0; /* Taustaväri */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding:; /* Esimerkiksi 10 pikseliä ylä- ja alapuolelle */
+  width: 100%;
+  background-color: rgb(100, 155, 237);
+  color: white; /* Tekstin väri */
+  font-weight: bold; /* Lihavoidaan teksti */
 }
+
 
 /* Dialogi osio */
 .dialog-hidden {
@@ -164,5 +167,11 @@ body {
   background-size: cover; /* Taustakuvan kokoa muutetaan siten, että se peittää koko näytön säilyttäen silti alkuperäisen kuvasuhteen */
   background-repeat: no-repeat; /* Estää taustakuvan toiston */
   background-attachment: fixed; /* Kiinnittää taustakuvan näytön yläosaan, jolloin se ei liiku vieritettäessä */
+}
+/* Muokkaa sivun otsikon tyyliä */
+h1 {
+  color: white; /* Aseta tekstiväri valkoiseksi */
+  font-weight: bold; /* Lihavoidaan teksti */
+  font-size: 50px; /* Aseta fontin koko */
 }
 
