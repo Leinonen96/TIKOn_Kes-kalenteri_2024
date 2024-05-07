@@ -150,6 +150,7 @@ footer {
   cursor: pointer;
 }
 
+
 /* Media Query mobiililaitteille */
 @media (max-width: 600px) {
   #calendar-grid {
