@@ -80,25 +80,28 @@ footer {
   width: auto; /* Säädettävä leveys sisällön mukaan */
   min-width: 60%; /* Estää dialogia olemasta liian kapea */
   max-width: 1000px; /* Estää dialogia olemasta liian leveä */
-  min-height: 30%;
+
 }
 
 .dialog-content {
-    position: relative; /* Tämä on jo oikein asetettu */
-    display: flex;      /* Käytä flexboxia keskittämiseen */
-    flex-direction: column; /* Asetetaan lapset pystysuunnassa */
-    justify-content: center; /* Keskittää lapset pystysuunnassa */
-    align-items: center; /* Keskittää lapset vaakasuunnassa */
-    width: 100%;        /* Täyttää koko saatavilla olevan tilan */
-    height: 100%;       /* Täyttää koko saatavilla olevan tilan */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;  /* Muutettu keskittämästä, jotta sisältö alkaa yläreunasta */
+    align-items: center;
+    width: 100%;
+    max-height: 80vh;  /* Määrittele maksimikorkeus prosentteina näytön korkeudesta */
+    overflow-y: auto;  /* Sallii pystysuoran vierityksen tarvittaessa */
+    padding: 20px;     /* Varmistaa, että on tilaa sisällön ympärillä */
 }
 
 #event-map, #event-image {
     /* Nämä tyylit pitävät elementit keskitettyinä flexbox-säännön ansiosta */
     width: 100%;  /* Käytä 100% leveydestä */
-    max-width: 1000px; /* Maksimileveys */
+    max-width: 500px; /* Maksimileveys */
     height: auto; /* Automaattinen korkeus aspect-ratio mukaan */
     object-fit: cover; /* Täyttää koko tilan leikkaamalla ylimääräiset osat */
+
 }
 
 #event-map {
@@ -106,19 +109,18 @@ footer {
     height: 200px;
     min-width: 300px;
     max-width: 100%;
-    min-height: 500px; 
-    max-height: 600px; 
+    height: auto;
+    min-height: 200px;
+    max-height: 600px;
 }
 
 #event-image {
     aspect-ratio: 1 / 1;
     width: 100%;
     max-width: 100%;    /* Maksimileveys, varmistaa että kuva ei veny yli kontin leveyden */
-    min-width: 300px;   /* Minimileveys, varmistaa että kuva ei kutistu alle 300px */
+    min-width: 200px;   /* Minimileveys, varmistaa että kuva ei kutistu alle 300px */
     height: auto;       /* Korkeus määräytyy automaattisesti mittasuhteen mukaan */
-    min-height: 300px;  /* Minimikorkeus, varmistaa että kuva ei kutistu alle 300px */
-    max-height: 1000px;
-    max-width: 1000px;  /* Voi rajoittaa kuvan korkeutta */
+    max-width: 400px;  /* Voi rajoittaa kuvan korkeutta */
     object-fit: cover  /* Täyttää kontin pitäen mittasuhteen, voi leikata ylimääräiset osat */
 }
 

@@ -36,7 +36,8 @@ function openDialog(weekNumber) {
 }
 
 function closeDialog() {
-    document.getElementById('event-dialog').classList.replace('dialog-visible', 'dialog-hidden');
+    const dialog = document.getElementById('event-dialog');
+    dialog.classList.replace('dialog-visible', 'dialog-hidden');
 }
 
 async function loadMap(coordinates) {
