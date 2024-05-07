@@ -1,69 +1,95 @@
 {
-  "sections": [
+  "events": [
     {
-      "name": "Section 1",
-      "description": "Description of Section 1",
-      "coordinates": "Latitude, Longitude"
+      "21": {
+        "title": "Section 1",
+        "description": "Description of Section 1",
+        "coordinates": "Latitude, Longitude"
+      }
     },
     {
-      "name": "Section 2",
-      "description": "Description of Section 2",
-      "coordinates": "Latitude, Longitude"
+      "22": {
+        "title": "Section 2",
+        "description": "Description of Section 2",
+        "coordinates": "Latitude, Longitude"
+      }
     },
     {
-      "name": "Section 3",
-      "description": "Description of Section 3",
-      "coordinates": "Latitude, Longitude"
+      "23": {
+        "title": "Section 3",
+        "description": "Description of Section 3",
+        "coordinates": "Latitude, Longitude"
+      }
     },
     {
-      "name": "Section 4",
-      "description": "Description of Section 4",
-      "coordinates": "Latitude, Longitude"
+      "24": {
+        "title": "Section 4",
+        "description": "Description of Section 4",
+        "coordinates": "Latitude, Longitude"
+      }
     },
     {
-      "name": "Section 5",
-      "description": "Description of Section 5",
-      "coordinates": "Latitude, Longitude"
+      "25": {
+        "title": "Section 5",
+        "description": "Description of Section 5",
+        "coordinates": "Latitude, Longitude"
+      }
     },
     {
-      "name": "Section 6",
-      "description": "Description of Section 6",
-      "coordinates": "Latitude, Longitude"
+      "26": {
+        "title": "Section 6",
+        "description": "Description of Section 6",
+        "coordinates": "Latitude, Longitude"
+      }
     },
     {
-      "name": "Section 7",
-      "description": "Description of Section 7",
-      "coordinates": "Latitude, Longitude"
+      "27": {
+        "title": "Section 7",
+        "description": "Description of Section 7",
+        "coordinates": "Latitude, Longitude"
+      }
     },
     {
-      "name": "Section 8",
-      "description": "Description of Section 8",
-      "coordinates": "Latitude, Longitude"
+      "28": {
+        "title": "Section 8",
+        "description": "Description of Section 8",
+        "coordinates": "Latitude, Longitude"
+      }
     },
     {
-      "name": "Section 9",
-      "description": "Description of Section 9",
-      "coordinates": "Latitude, Longitude"
+      "29": {
+        "title": "Section 9",
+        "description": "Description of Section 9",
+        "coordinates": "Latitude, Longitude"
+      }
     },
     {
-      "name": "Section 10",
-      "description": "Description of Section 10",
-      "coordinates": "Latitude, Longitude"
+      "30": {
+        "title": "Section 10",
+        "description": "Description of Section 10",
+        "coordinates": "Latitude, Longitude"
+      }
     },
     {
-      "name": "Section 11",
-      "description": "Description of Section 11",
-      "coordinates": "Latitude, Longitude"
+      "31": {
+        "title": "Section 11",
+        "description": "Description of Section 11",
+        "coordinates": "Latitude, Longitude"
+      }
     },
     {
-      "name": "Section 12",
-      "description": "Description of Section 12",
-      "coordinates": "Latitude, Longitude"
+      "32": {
+        "title": "Section 12",
+        "description": "Description of Section 12",
+        "coordinates": "Latitude, Longitude"
+      }
     },
     {
-      "name": "Section 13",
-      "description": "Description of Section 13",
-      "coordinates": "Latitude, Longitude"
+      "33": {
+        "title": "Section 13",
+        "description": "Description of Section 13",
+        "coordinates": "Latitude, Longitude"
+      }
     }
   ]
 }
