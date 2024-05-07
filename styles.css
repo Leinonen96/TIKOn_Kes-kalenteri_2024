@@ -1,71 +1,116 @@
 html,
 body {
-  height: 100%; /* Täysi korkeus sivulle */
-  margin: 0; /* Poistaa oletusmarginaalit */
-  padding: 0; /* Poistaa oletuspaddingit */
+  height: 100%;
+  /* Täysi korkeus sivulle */
+  margin: 0;
+  /* Poistaa oletusmarginaalit */
+  padding: 0;
+  /* Poistaa oletuspaddingit */
   display: flex;
-  flex-direction: column; /* Asettaa elementit pystysuunnassa */
+  flex-direction: column;
+  /* Asettaa elementit pystysuunnassa */
 }
 
 .centered-container {
-  flex: 1; /* Vie kaiken jäljellä olevan tilan, mutta jättää tilaa footerille */
-  display: flex; /* Asettaa flexboxin käyttöön */
-  flex-direction: column; /* Sisältö pystysuunnassa */
-  align-items: center; /* Keskittää kaikki alielementit horisontaalisesti */
-  justify-content: flex-start; /* Asettaa sisällön yläosaan, ei keskitä vertikaalisesti */
-  width: 100%; /* Koko näytön leveys */
-  padding: 20px; /* Tilaa ympärillä */
+  flex: 1;
+  /* Vie kaiken jäljellä olevan tilan, mutta jättää tilaa footerille */
+  display: flex;
+  /* Asettaa flexboxin käyttöön */
+  flex-direction: column;
+  /* Sisältö pystysuunnassa */
+  align-items: center;
+  /* Keskittää kaikki alielementit horisontaalisesti */
+  justify-content: flex-start;
+  /* Asettaa sisällön yläosaan, ei keskitä vertikaalisesti */
+  width: 100%;
+  /* Koko näytön leveys */
+  padding: 20px;
+  /* Tilaa ympärillä */
 }
 
 #calendar-grid {
-  display: grid; /* Asetetaan näyttömuodoksi grid, joka määrittelee elementin ruudukkona */
-  grid-template-columns: repeat(
-    3,
-    1fr
-  ); /* Kolme samankokoista saraketta käyttäen fr yksikköä */
-  gap: 10px; /* Asettaa 10 pikselin välin kaikkien solujen väliin */
-  padding: 20px; /* Lisää 20 pikselin tyhjän tilan ruudukon sisäpuolelle */
-  margin: auto; /* Keskittää ruudukon sivusuunnassa asettamalla automaattisen marginaalin */
-  width: 90%; /* Asettaa ruudukon leveydeksi 90% vanhemman elementin leveydestä */
-  max-width: 1100px; /* Rajaa ruudukon maksimileveyden 1100 pikseliin */
+  display: grid;
+  /* Asetetaan näyttömuodoksi grid, joka määrittelee elementin ruudukkona */
+  grid-template-columns: repeat(3,
+      1fr);
+  /* Kolme samankokoista saraketta käyttäen fr yksikköä */
+  gap: 10px;
+  /* Asettaa 10 pikselin välin kaikkien solujen väliin */
+  padding: 20px;
+  /* Lisää 20 pikselin tyhjän tilan ruudukon sisäpuolelle */
+  margin: auto;
+  /* Keskittää ruudukon sivusuunnassa asettamalla automaattisen marginaalin */
+  width: 90%;
+  /* Asettaa ruudukon leveydeksi 90% vanhemman elementin leveydestä */
+  max-width: 1100px;
+  /* Rajaa ruudukon maksimileveyden 1100 pikseliin */
 }
 
 .calendar-cell {
-  background-color: rgba(240, 240, 240, 0.5); /* Sets a semi-transparent light gray background */
-  border: 1px solid #ccc; /* Keeps the 1-pixel gray border */
-  aspect-ratio: 1; /* Maintains a 1:1 aspect ratio */
-  display: flex; /* Uses flexbox for layout */
-  align-items: center; /* Centers content vertically */
-  justify-content: center; /* Centers content horizontally */
-  backdrop-filter: blur(8px); /* Adds a blur effect to elements behind the cell */
-  -webkit-backdrop-filter: blur(8px); /* For Safari compatibility */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds a soft shadow for depth */
-  transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
-  cursor: pointer; /* Changes the cursor to a pointer to indicate clickability */
-  font-size: 25px; /* Fontin koko */
-  font-weight: bold; /* Lihavoidaan teksti */
-  color: #ffffff; /* Tekstin väri */
-  border-radius: 20px; /* Adds rounded corners */
-  border: 1px solid #ccc; /* Adds a subtle border */
+  background-color: rgba(240, 240, 240, 0.5);
+  /* Asettaa puoliläpinäkyvän vaaleanharmaan taustan */
+  border: 1px solid #ccc;
+  /* Säilyttää 1 pikselin harmaan reunuksen */
+  aspect-ratio: 1;
+  /* Säilyttää 1:1 kuvasuhteen */
+  display: flex;
+  /* Käyttää flexboxia asettelussa */
+  align-items: center;
+  /* Keskittää sisällön pystysuunnassa */
+  justify-content: center;
+  /* Keskittää sisällön vaakasuunnassa */
+  backdrop-filter: blur(8px);
+  /* Lisää sumennusefektin solun takana oleviin elementteihin */
+  -webkit-backdrop-filter: blur(8px);
+  /* Safari-yhteensopivuutta varten */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Valinnainen: Lisää pehmeän varjon syvyyden luomiseksi */
+  transition: background-color 0.3s, box-shadow 0.3s;
+  /* Sulava siirtymä hover-efekteille */
+  cursor: pointer;
+  /* Vaihtaa kursorin osoittimeksi osoittaen klikattavuutta */
+  font-size: 25px;
+  /* Fontin koko */
+  font-weight: bold;
+  /* Lihavoidaan teksti */
+  color: #ffffff;
+  /* Tekstin väri */
+  border-radius: 20px;
+  /* Lisää pyöristetyt kulmat */
+  border: 1px solid #ccc;
+  /* Lisää hienovaraisen reunuksen */
 }
 
 .calendar-cell:hover {
-  background-color: rgba(164, 193, 219, 0.7); /* Lightens the background on hover for a more interactive feel */
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15); /* Increases the shadow to give a "lifting" effect */
+  background-color: rgba(164, 193, 219, 0.7);
+  /* Vaalentaa taustaa hover-tilassa interaktiivisemman tunteen luomiseksi */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  /* Lisää varjoa antamaan "nosto" -efekti */
 }
 
 #event-description {
-  font-family: Arial, sans-serif; /* Sets the font family */
-  font-size: 16px; /* Sets the font size */
-  color: #333; /* Sets the text color to dark gray */
-  line-height: 1.5; /* Sets the line height for better readability */
-  max-width: 600px; /* Limits the maximum width to 600px */
-  margin: 0 auto; /* Centers the text block horizontally */
-  padding: 20px; /* Adds padding around the text */
-  text-align: justify; /* Justifies the text for a clean look */
-  background-color: #f8f8f8; /* Light background color for the text area */
-  border-radius: 8px; /* Adds rounded corners */
-  border: 1px solid #ccc; /* Adds a subtle border */
+  font-family: Arial, sans-serif;
+  /* Asettaa fontin perheen */
+  font-size: 16px;
+  /* Asettaa fontin koon */
+  color: #333;
+  /* Asettaa tekstin värin tummanharmaaksi */
+  line-height: 1.5;
+  /* Asettaa rivivälin paremman luettavuuden vuoksi */
+  max-width: 600px;
+  /* Rajoittaa maksimileveyden 600 pikseliin */
+  margin: 0 auto;
+  /* Keskittää tekstilohkon vaakasuunnassa */
+  padding: 20px;
+  /* Lisää sisällön ympärille tyhjää tilaa */
+  text-align: justify;
+  /* Tasaa tekstin siistin ulkonäön saavuttamiseksi */
+  background-color: #f8f8f8;
+  /* Vaalea taustaväri tekstialueelle */
+  border-radius: 8px;
+  /* Lisää pyöristetyt kulmat */
+  border: 1px solid #ccc;
+  /* Lisää hienovaraisen reunuksen */
   margin-top: 5px;
   margin-bottom: 5px;
 }
@@ -78,8 +123,10 @@ footer {
   text-align: center;
   width: 100%;
   background-color: rgba(45, 58, 77, 0.822);
-  color: white; /* Tekstin väri */
-  font-weight: bold; /* Lihavoidaan teksti */
+  color: white;
+  /* Tekstin väri */
+  font-weight: bold;
+  /* Lihavoidaan teksti */
 }
 
 
@@ -109,101 +156,140 @@ footer {
 }
 
 .dialog-content {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;  /* Muutettu keskittämästä, jotta sisältö alkaa yläreunasta */
-    align-items: center;
-    width: 100%;
-    max-height: 80vh;  /* Määrittele maksimikorkeus prosentteina näytön korkeudesta */
-    overflow-y: auto;  /* Sallii pystysuoran vierityksen tarvittaessa */
-    padding: 20px;     /* Varmistaa, että on tilaa sisällön ympärillä */
-    padding-left: 0;
-    margin-left: 0;
-    text-align: left;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* Muutettu keskittämästä, jotta sisältö alkaa yläreunasta */
+  align-items: center;
+  width: 100%;
+  max-height: 80vh;
+  /* Määrittele maksimikorkeus prosentteina näytön korkeudesta */
+  overflow-y: auto;
+  /* Sallii pystysuoran vierityksen tarvittaessa */
+  padding: 20px;
+  /* Varmistaa, että on tilaa sisällön ympärillä */
+  padding-left: 0;
+  margin-left: 0;
+  text-align: left;
 }
 
-#event-map, #event-image {
-    /* Nämä tyylit pitävät elementit keskitettyinä flexbox-säännön ansiosta */
-    width: 100%;  /* Käytä 100% leveydestä */
-    max-width: 500px; /* Maksimileveys */
-    height: auto; /* Automaattinen korkeus aspect-ratio mukaan */
-    object-fit: cover; /* Täyttää koko tilan leikkaamalla ylimääräiset osat */
+#event-map,
+#event-image {
+  /* Nämä tyylit pitävät elementit keskitettyinä flexbox-säännön ansiosta */
+  width: 100%;
+  /* Käytä 100% leveydestä */
+  max-width: 500px;
+  /* Maksimileveys */
+  height: auto;
+  /* Automaattinen korkeus aspect-ratio mukaan */
+  object-fit: cover;
+  /* Täyttää koko tilan leikkaamalla ylimääräiset osat */
 
 }
 
 #event-map {
-    width: 100%;
-    height: 200px;
-    min-width: 300px;
-    max-width: 90%;
-    height: auto;
-    min-height: 200px;
-    max-height: 600px;
+  width: 100%;
+  height: 200px;
+  min-width: 300px;
+  max-width: 90%;
+  height: auto;
+  min-height: 200px;
+  max-height: 600px;
 }
 
 #event-image {
-    aspect-ratio: 1 / 1;
-    width: 100%;
-    max-width: 100%;    /* Maksimileveys, varmistaa että kuva ei veny yli kontin leveyden */
-    min-width: 200px;   /* Minimileveys, varmistaa että kuva ei kutistu alle 300px */
-    height: auto;       /* Korkeus määräytyy automaattisesti mittasuhteen mukaan */
-    max-width: 400px;  /* Voi rajoittaa kuvan korkeutta */
-    object-fit: cover  /* Täyttää kontin pitäen mittasuhteen, voi leikata ylimääräiset osat */
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  max-width: 100%;
+  /* Maksimileveys, varmistaa että kuva ei veny yli kontin leveyden */
+  min-width: 200px;
+  /* Minimileveys, varmistaa että kuva ei kutistu alle 300px */
+  height: auto;
+  /* Korkeus määräytyy automaattisesti mittasuhteen mukaan */
+  max-width: 400px;
+  /* Voi rajoittaa kuvan korkeutta */
+  object-fit: cover
+    /* Täyttää kontin pitäen mittasuhteen, voi leikata ylimääräiset osat */
 }
 
 .close-button {
-    position: absolute;
-    top: 10px;
-    right: 5%;  /* Sijoitettu oikeaan yläkulmaan */
-    font-size: 25px;
-    cursor: pointer;
-    background-color: rgba(45, 58, 77, 0.315); /* Taustaväri, valinnainen */
-    border: none; /* Poistaa reunan, jos sellainen on */
-    padding: 5px 10px; /* Pieni padding parantamaan painikkeen ulkoasua */
-    border-radius: 5px; /* Pyöristetyt kulmat */
-    color: #333; /* Tekstin väri, valinnainen */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Lisää varjoa erottuvuuden lisäämiseksi */
-  }
+  position: absolute;
+  top: 10px;
+  right: 5%;
+  /* Sijoitettu oikeaan yläkulmaan */
+  font-size: 25px;
+  cursor: pointer;
+  background-color: rgba(45, 58, 77, 0.315);
+  /* Taustaväri, valinnainen */
+  border: none;
+  /* Poistaa reunan, jos sellainen on */
+  padding: 5px 10px;
+  /* Pieni padding parantamaan painikkeen ulkoasua */
+  border-radius: 5px;
+  /* Pyöristetyt kulmat */
+  color: #333;
+  /* Tekstin väri, valinnainen */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  /* Lisää varjoa erottuvuuden lisäämiseksi */
+}
 
-  .close-button:hover {
-    background-color: #ff0000; /* Slightly darker green when hovered */
-    box-shadow: 0 6px 12px rgba(0,0,0,0.2); /* Larger shadow on hover for a "lifting" effect */
+.close-button:hover {
+  background-color: #ff0000;
+  /* Hieman tummempi vihreä, kun hiiren kohdistin on päällä */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  /* Suurempi varjo, kun hiiren kohdistin on päällä "nosto" -efektin aikaansaamiseksi */
 }
 
 .close-button:active {
-    background-color: #3a658d; /* Even darker green when button is clicked */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Smaller shadow to mimic "pressing" effect */
+  background-color: #3a658d;
+  /* Vielä tummempi vihreä, kun painiketta painetaan */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  /* Pienempi varjo "painamisen" efektin jäljittelemiseksi */
 }
-  
 
-  #closeButton1 {
-    font-size: 25px;
-    margin-top: 10px;
-    cursor: pointer;
-  }
-  
-  #closeButton1 {
-    font-size: 25px;         /* Keeps the large font size */
-    margin-top: 10px;        /* Keeps the top margin */
-    cursor: pointer;         /* Keeps the cursor as pointer to indicate it's clickable */
-    padding: 10px 20px;      /* Adds padding around the text to make button larger */
-    background-color: #82c7ff; /* A nice green background */
-    color: white;            /* White text color for better contrast */
-    border: none;            /* No border for a cleaner look */
-    border-radius: 10px;     /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Adds a subtle shadow for a 3D effect */
-    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition for mouse events */
+
+#closeButton1 {
+  font-size: 25px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+#closeButton1 {
+  font-size: 25px;
+  /* Säilyttää suuren fonttikoon */
+  margin-top: 10px;
+  /* Säilyttää ylämarginaalin */
+  cursor: pointer;
+  /* Säilyttää osoittimen osoittimena osoittaen, että se on napsautettavissa */
+  padding: 10px 20px;
+  /* Lisää paddingia tekstin ympärille, jotta painike on suurempi */
+  background-color: #82c7ff;
+  /* Mukava vihreä tausta */
+  color: white;
+  /* Valkoinen tekstin väri paremman kontrastin vuoksi */
+  border: none;
+  /* Ei reunaa siistimmän ulkonäön vuoksi */
+  border-radius: 10px;
+  /* Pyöristetyt kulmat */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Lisää hienovaraisen varjon 3D-efektin aikaansaamiseksi */
+  transition: background-color 0.3s, box-shadow 0.3s;
+  /* Sulava siirtymä hiiren tapahtumille */
 }
 
 #closeButton1:hover {
-    background-color: #41799e; /* Slightly darker green when hovered */
-    box-shadow: 0 6px 12px rgba(0,0,0,0.2); /* Larger shadow on hover for a "lifting" effect */
+  background-color: #41799e;
+  /* Hieman tummempi vihreä, kun hiiren kohdistin on päällä */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  /* Suurempi varjo, kun hiiren kohdistin on päällä "nosto" -efektin aikaansaamiseksi */
 }
 
 #closeButton1:active {
-    background-color: #3a658d; /* Even darker green when button is clicked */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Smaller shadow to mimic "pressing" effect */
+  background-color: #3a658d;
+  /* Vielä tummempi vihreä, kun painiketta painetaan */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  /* Pienempi varjo "painamisen" efektin jäljittelemiseksi */
 }
 
 
@@ -211,19 +297,27 @@ footer {
 /* Media Query mobiililaitteille */
 @media (max-width: 600px) {
   #calendar-grid {
-    grid-template-columns: 1fr; /* Asettaa yhden sarakkeen mobiililaitteiden näyttökokoon */
+    grid-template-columns: 1fr;
+    /* Asettaa yhden sarakkeen mobiililaitteiden näyttökokoon */
   }
 }
 
 body {
   background-image: url('Kalenteri_kuvat/Helsinki.png');
-  background-size: cover; /* Taustakuvan kokoa muutetaan siten, että se peittää koko näytön säilyttäen silti alkuperäisen kuvasuhteen */
-  background-repeat: no-repeat; /* Estää taustakuvan toiston */
-  background-attachment: fixed; /* Kiinnittää taustakuvan näytön yläosaan, jolloin se ei liiku vieritettäessä */
+  background-size: cover;
+  /* Taustakuvan kokoa muutetaan siten, että se peittää koko näytön säilyttäen silti alkuperäisen kuvasuhteen */
+  background-repeat: no-repeat;
+  /* Estää taustakuvan toiston */
+  background-attachment: fixed;
+  /* Kiinnittää taustakuvan näytön yläosaan, jolloin se ei liiku vieritettäessä */
 }
+
 /* Muokkaa sivun otsikon tyyliä */
 h1 {
-  color: white; /* Aseta tekstiväri valkoiseksi */
-  font-weight: bold; /* Lihavoidaan teksti */
-  font-size: 50px; /* Aseta fontin koko */
+  color: white;
+  /* Aseta tekstiväri valkoiseksi */
+  font-weight: bold;
+  /* Lihavoidaan teksti */
+  font-size: 50px;
+  /* Aseta fontin koko */
 }
