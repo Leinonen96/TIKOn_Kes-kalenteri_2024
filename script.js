@@ -1,3 +1,4 @@
+// Tämä on JavaScript-tiedosto, joka sisältää kaiken tarvittavan toiminnallisuuden kalenterin luomiseen ja tapahtumien käsittelyyn.
 document.addEventListener('DOMContentLoaded', function () {
     const gridContainer = document.getElementById('calendar-grid');
     const totalCells = 33;
@@ -22,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// Aseta kuva soluun, jos nykyinen viikko on suurempi tai yhtä suuri kuin indeksi
 function applyImageToCell(cell, index) {
     const currentWeekNumber = getCurrentWeekNumber(new Date());
     // Tarkista valintaruudun tila oikein
@@ -39,6 +41,8 @@ function applyImageToCell(cell, index) {
         imgElement.style.width = '100%';   // Kuva leveys on yhtä suuri kuin solun leveys
         imgElement.style.height = 'auto';  // Kuva korkeus säilyy suhteellisena
         imgElement.style.maxHeight = '100%'; // Kuva korkeus ei ylitä solun korkeutta
+        imgElement.style.borderRadius = '20px'; /* Adds rounded corners */
+        imgElement.style.border = '1px solid #ccc'; /* Adds a subtle border */
 
         cell.innerHTML = ''; // Tyhjennä solun sisältö
         cell.appendChild(imgElement); // Aseta solun kuva kuva-elementtiin
@@ -79,7 +83,7 @@ async function loadMap(coordinates) {
     const [lat, lng] = coordinates.split(", ");
     const position = { lat: parseFloat(lat), lng: parseFloat(lng) };
 
-    // Pyydä tarvittavat kirjastot.
+    // Pyytää tarvittavat kirjastot.
     const { Map } = await google.maps.importLibrary("maps");
     const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
 
@@ -87,7 +91,7 @@ async function loadMap(coordinates) {
     map = new Map(document.getElementById("event-map"), {
         zoom: 15,
         center: position,
-        mapId: "DEMO_MAP_ID",  // Vaihda DEMO_MAP_ID sopivaan arvoon
+        mapId: "DEMO_MAP_ID",
     });
 
     // Merkki, sijoitettuna annettuihin koordinaatteihin
@@ -98,6 +102,7 @@ async function loadMap(coordinates) {
     });
 }
 
+// Palauttaa nykyisen viikon numeron annetulle päivämäärälle
 function getCurrentWeekNumber(date) {
     const firstDayOfYear = new Date(date.getFullYear(), 0, 1);
     const pastDaysOfYear = (date - firstDayOfYear + ((firstDayOfYear.getDay() + 6) % 7 * 86400000)) / 86400000;

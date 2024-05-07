@@ -31,23 +31,43 @@ body {
 }
 
 .calendar-cell {
-  background-color: #f0f0f0; /* Asettaa taustavärin vaaleanharmaaksi */
-  border: 1px solid #ccc; /* Asettaa 1 pikselin paksuisen, harmaan reunuksen */
-  aspect-ratio: 1; /* Määrittää, että elementin leveys ja korkeus ovat samat */
-  display: flex; /* Asettaa elementin näyttömuodoksi flexboxin */
-  align-items: center; /* Keskittää sisällön pystysuunnassa */
-  justify-content: center; /* Keskittää sisällön vaakasuunnassa */
+  background-color: rgba(240, 240, 240, 0.5); /* Sets a semi-transparent light gray background */
+  border: 1px solid #ccc; /* Keeps the 1-pixel gray border */
+  aspect-ratio: 1; /* Maintains a 1:1 aspect ratio */
+  display: flex; /* Uses flexbox for layout */
+  align-items: center; /* Centers content vertically */
+  justify-content: center; /* Centers content horizontally */
+  backdrop-filter: blur(8px); /* Adds a blur effect to elements behind the cell */
+  -webkit-backdrop-filter: blur(8px); /* For Safari compatibility */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds a soft shadow for depth */
+  transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+  cursor: pointer; /* Changes the cursor to a pointer to indicate clickability */
+  font-size: 25px; /* Fontin koko */
+  font-weight: bold; /* Lihavoidaan teksti */
+  color: #ffffff; /* Tekstin väri */
+  border-radius: 20px; /* Adds rounded corners */
+  border: 1px solid #ccc; /* Adds a subtle border */
 }
 
-.calendar-cell-content {
-  position: absolute; /* Sijoittaa sisällön suhteessa lähimpään suhteellisesti sijoitettuun esivanhempaan */
-  top: 0; /* Asettaa sisällön yläreunan kiinni kontin yläreunaan */
-  left: 0; /* Asettaa sisällön vasemman reunan kiinni kontin vasempaan reunaan */
-  right: 0; /* Asettaa sisällön oikean reunan kiinni kontin oikeaan reunaan */
-  bottom: 0; /* Asettaa sisällön alareunan kiinni kontin alareunaan */
-  display: flex; /* Asettaa elementin näyttömuodoksi flexboxin */
-  justify-content: center; /* Keskittää sisällön vaakasuunnassa */
-  align-items: center; /* Keskittää sisällön pystysuunnassa */
+.calendar-cell:hover {
+  background-color: rgba(164, 193, 219, 0.7); /* Lightens the background on hover for a more interactive feel */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15); /* Increases the shadow to give a "lifting" effect */
+}
+
+#event-description {
+  font-family: Arial, sans-serif; /* Sets the font family */
+  font-size: 16px; /* Sets the font size */
+  color: #333; /* Sets the text color to dark gray */
+  line-height: 1.5; /* Sets the line height for better readability */
+  max-width: 600px; /* Limits the maximum width to 600px */
+  margin: 0 auto; /* Centers the text block horizontally */
+  padding: 20px; /* Adds padding around the text */
+  text-align: justify; /* Justifies the text for a clean look */
+  background-color: #f8f8f8; /* Light background color for the text area */
+  border-radius: 8px; /* Adds rounded corners */
+  border: 1px solid #ccc; /* Adds a subtle border */
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 footer {
@@ -56,7 +76,6 @@ footer {
   left: 0;
   right: 0;
   text-align: center;
-  padding:; /* Esimerkiksi 10 pikseliä ylä- ja alapuolelle */
   width: 100%;
   background-color: rgba(45, 58, 77, 0.822);
   color: white; /* Tekstin väri */
@@ -75,14 +94,18 @@ footer {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background-color: aliceblue;
+  background-color: rgba(213, 235, 255, 0.747);
   border: 2px solid #ccc;
   z-index: 1000;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: auto;
   min-width: 40%;
   max-width: 600px;
-  border-radius: 10px; /* Lisätty pyöristetyt reunat */
+  border-radius: 10px;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 20px;
 }
 
 .dialog-content {
@@ -95,6 +118,9 @@ footer {
     max-height: 80vh;  /* Määrittele maksimikorkeus prosentteina näytön korkeudesta */
     overflow-y: auto;  /* Sallii pystysuoran vierityksen tarvittaessa */
     padding: 20px;     /* Varmistaa, että on tilaa sisällön ympärillä */
+    padding-left: 0;
+    margin-left: 0;
+    text-align: left;
 }
 
 #event-map, #event-image {
@@ -139,6 +165,16 @@ footer {
     color: #333; /* Tekstin väri, valinnainen */
     box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Lisää varjoa erottuvuuden lisäämiseksi */
   }
+
+  .close-button:hover {
+    background-color: #ff0000; /* Slightly darker green when hovered */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2); /* Larger shadow on hover for a "lifting" effect */
+}
+
+.close-button:active {
+    background-color: #3a658d; /* Even darker green when button is clicked */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Smaller shadow to mimic "pressing" effect */
+}
   
 
   #closeButton1 {
@@ -147,13 +183,29 @@ footer {
     cursor: pointer;
   }
   
-  
-
-.calendar-cell:hover {
-  background-color: #e0e0e0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
+  #closeButton1 {
+    font-size: 25px;         /* Keeps the large font size */
+    margin-top: 10px;        /* Keeps the top margin */
+    cursor: pointer;         /* Keeps the cursor as pointer to indicate it's clickable */
+    padding: 10px 20px;      /* Adds padding around the text to make button larger */
+    background-color: #82c7ff; /* A nice green background */
+    color: white;            /* White text color for better contrast */
+    border: none;            /* No border for a cleaner look */
+    border-radius: 10px;     /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Adds a subtle shadow for a 3D effect */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition for mouse events */
 }
+
+#closeButton1:hover {
+    background-color: #41799e; /* Slightly darker green when hovered */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2); /* Larger shadow on hover for a "lifting" effect */
+}
+
+#closeButton1:active {
+    background-color: #3a658d; /* Even darker green when button is clicked */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Smaller shadow to mimic "pressing" effect */
+}
+
 
 
 /* Media Query mobiililaitteille */
@@ -162,6 +214,7 @@ footer {
     grid-template-columns: 1fr; /* Asettaa yhden sarakkeen mobiililaitteiden näyttökokoon */
   }
 }
+
 body {
   background-image: url('Kalenteri_kuvat/Helsinki.png');
   background-size: cover; /* Taustakuvan kokoa muutetaan siten, että se peittää koko näytön säilyttäen silti alkuperäisen kuvasuhteen */
@@ -174,4 +227,3 @@ h1 {
   font-weight: bold; /* Lihavoidaan teksti */
   font-size: 50px; /* Aseta fontin koko */
 }
-
