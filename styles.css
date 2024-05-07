@@ -79,6 +79,7 @@ footer {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: auto; /* Säädettävä leveys sisällön mukaan */
   max-width: 90%; /* Estää dialogia olemasta liian leveä */
+  min-width: 80%; /* Estää dialogia olemasta liian kapea */
 }
 
 .dialog-content {

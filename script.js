@@ -35,17 +35,25 @@ function openDialog(weekNumber) {
     .catch(error => console.error('Error loading the event data:', error));
 }
 
-function loadMap(coordinates) {
+async function loadMap(coordinates) {
     const [lat, lng] = coordinates.split(", ");
-    const location = { lat: parseFloat(lat), lng: parseFloat(lng) };
+    const position = { lat: parseFloat(lat), lng: parseFloat(lng) };
 
-    var map = new google.maps.Map(document.getElementById('event-map'), {
-        center: location,
-        zoom: 15
+    // Request needed libraries.
+    const { Map } = await google.maps.importLibrary("maps");
+    const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+
+    // The map, centered at position
+    map = new Map(document.getElementById("event-map"), {
+        zoom: 15,
+        center: position,
+        mapId: "DEMO_MAP_ID",  // Vaihda DEMO_MAP_ID sopivaan arvoon
     });
 
-    new google.maps.Marker({
-        position: location,
-        map: map
+    // The marker, positioned at position
+    const marker = new AdvancedMarkerElement({
+        map: map,
+        position: position,
+        title: "Event Location"  // Voit mukauttaa otsikkoa
     });
 }
