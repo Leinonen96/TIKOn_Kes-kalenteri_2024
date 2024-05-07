@@ -100,7 +100,7 @@ async function loadMap(coordinates) {
     mapId: "DEMO_MAP_ID", // Vaihda DEMO_MAP_ID sopivaan arvoon
   });
 
-  // The marker, positioned at position
+  // Marker neula sijaintiin
   const marker = new AdvancedMarkerElement({
     map: map,
     position: position,
