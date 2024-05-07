@@ -58,7 +58,7 @@ footer {
   text-align: center;
   padding:; /* Esimerkiksi 10 pikseliä ylä- ja alapuolelle */
   width: 100%;
-  background-color: rgb(100, 155, 237);
+  background-color: rgba(45, 58, 77, 0.822);
   color: white; /* Tekstin väri */
   font-weight: bold; /* Lihavoidaan teksti */
 }
