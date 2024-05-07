@@ -10,13 +10,13 @@
     {
       "22": {
         "title": "Uimaan Hietarantaan",
-        "description": "Tervetuloa nauttimaan kesäisestä uintipäivästä Hietarantaan! Se on täydellinen tapa rentoutua ja viettää aikaa ystävien kanssa! Haaga-Helian opiskelijoille suunnattu tapahtuma tarjoaa sinulle mahdollisuuden paeta arjen kiireitä ja viettää päivä aurinkoisella rannalla. Luvassa on virkistävää uimista meressä, jännittäviä pelejä ja ystävällistä kilpailua rantalentopallon ja rantafutiksen merkeissä.",
+        "description": "Tervetuloa nauttimaan kesäisestä uintipäivästä Hietarantaan! Se on täydellinen tapa rentoutua ja viettää aikaa ystävien kanssa! Haaga-Helian opiskelijoille suunnattu tapahtuma tarjoaa sinulle mahdollisuuden paeta arjen kiireitä ja viettää päivä aurinkoisella rannalla. Luvassa on virkistävää uimista meressä, jännittäviä pelejä ja kilpailua rantalentopallon ja rantafutiksen merkeissä.",
         "coordinates": "60.174040259032225, 24.905230067841536"
       }
     },
     {
       "23": {
-        "title": "Grillaus päivä Kaivopuistossa",
+        "title": "Grillauspäivä Kaivopuistossa",
         "description": "Tervetuloa grillaus päivään Kaivopuistoon! Se on täydellinen tapa nauttia aurinkoisesta päivästä ystävien seurassa herkullisen ruoan äärellä! Haaga-Helian opiskelijoille suunnattu tapahtuma tarjoaa sinulle mahdollisuuden rentoutua ja nauttia ulkoilmasta samalla kun grillaat herkullisia eväitä Kaivopuiston kauniissa ympäristössä. Luvassa on rennon letkeää tunnelmaa, hyvää ruokaa ja iloista yhdessäoloa.",
         "coordinates": "60.155956755481924, 24.954396010098446"
       }
@@ -52,7 +52,7 @@
     {
       "28": {
         "title": "TIKO Kesäolympialaiset",
-        "description": "Tervetuloa kesäolympialaisiin, missä urheilu ja yhteisöllisyys kohtaavat aurinkoisessa ilmapiirissä! Haaga-Helian opiskelijoille suunnattu tapahtuma tarjoaa sinulle mahdollisuuden kokea olympiahengen ja kilpailla ystävien kanssa erilaisissa hauskoissa ja jännittävissä lajeissa. Laita urheilulliset vaatteet päälle, kutsu ystäväsi mukaan ja lähde mukaan nauttimaan kesäpäivästä täynnä liikunnan iloa ja tiukkoja kisoja.",
+        "description": "Tervetuloa kesäolympialaisiin, missä urheilu ja yhteisöllisyys kohtaavat aurinkoisessa ilmapiirissä! Haaga-Helian opiskelijoille suunnattu tapahtuma tarjoaa sinulle mahdollisuuden kokea olympiahengen ja kilpailla ystävien kanssa erilaisissa hauskoissa ja jännittävissä lajeissa. Laita urheilulliset vaatteet päälle, kutsu ystäväsi mukaan ja lähtekää yhdessä nauttimaan kesäpäivästä täynnä liikunnan iloa ja tiukkoja kisoja.",
         "coordinates": "60.15563760185458, 24.955844831446154"
       }
     },
@@ -66,7 +66,7 @@
     {
       "30": {
         "title": "Speed Dating",
-        "description": "Tervetuloa speed dating -tapahtumaan, missä rakkaus voi syttyä yhdessä illassa! Haaga-Helian opiskelijoille suunnattu tapahtuma tarjoaa sinulle ainutlaatuisen tilaisuuden tavata uusia ihmisiä ja löytää potentiaalisia kumppaneita nopeissa ja hauskissa treffeissä. Unohda turhat nettideittailun vaiva. Täällä voit kohdata potentiaalisia kumppaneita kasvokkain, keskustella ja saada ensivaikutelman reaaliajassa.",
+        "description": "Tervetuloa speed dating -tapahtumaan, missä rakkaus voi syttyä yhdessä illassa! Haaga-Helian opiskelijoille suunnattu tapahtuma tarjoaa sinulle ainutlaatuisen tilaisuuden tavata uusia ihmisiä ja löytää potentiaalisia kumppaneita nopeissa ja hauskissa treffeissä. Unohda turhat nettideittailun vaiva. Täällä voit kohdata potentiaalisia kumppaneita kasvokkain, keskustella ja saada ensivaikutelman nopeasti ilman deittisovelluksia",
         "coordinates": "60.157724568117935, 24.95658025882435"
       }
     },
