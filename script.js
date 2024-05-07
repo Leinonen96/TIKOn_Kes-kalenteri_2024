@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Bind a click handler that checks condition before opening dialog
         cell.onclick = function () {
-            checkConditionAndApplyImage(i, cell);
+            applyImageToCell(cell, i);
             openDialog(i);
         };
 
@@ -22,26 +22,15 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// Checks a condition and applies an image to the cell if the condition is true
-function checkConditionAndApplyImage(index, cell) {
-    let boolean1 = true;
-    if (boolean1) {
-        applyImageToCell(cell, index);
-    }
-}
-
-// Applies an image to the given cell
 function applyImageToCell(cell, index) {
-    const datePicker = document.getElementById('fake-date-picker');
-    const selectedDate = new Date(datePicker.value);
-    const selectedWeekNumber = getCurrentWeekNumber(selectedDate);
     const currentWeekNumber = getCurrentWeekNumber(new Date());
+    // Correctly accessing the checkbox state
+    let dateOk = document.getElementById('fake-date-toggle').checked;
 
-    let dateOk = selectedWeekNumber >= currentWeekNumber;
-
-    if (dateOk) {
+    // Condition to check if the current week number is greater than or equal to index or if the fake date is checked
+    if (currentWeekNumber >= index || dateOk) {
         // Adding an image to the cell
-        const imageUrl = `Kalenteri_kuvat/${index}.png`; // Assume this is the correct path
+        const imageUrl = `Kalenteri_kuvat/${index}.png`; // Assuming this is the correct path
         const imgElement = document.createElement('img');
         imgElement.src = imageUrl;
         imgElement.alt = 'Kuva viikolle ' + index;
@@ -54,13 +43,14 @@ function applyImageToCell(cell, index) {
         cell.innerHTML = ''; // Clear the cell content
         cell.appendChild(imgElement); // Set the cell image to the image element
     }
-    dateOk = false;
 }
+
 
 // Opens a dialog with event information for the given week number
 function openDialog(weekNumber) {
-    let dateOk = true;
-    if (dateOk || getCurrentWeekNumber() === weekNumber) {
+    const currentWeekNumber = getCurrentWeekNumber(new Date());
+    let dateOk = document.getElementById('fake-date-toggle').checked;
+    if (currentWeekNumber >= weekNumber || dateOk) {
         fetch('events.json')
             .then(response => response.json())
             .then(data => {
@@ -76,7 +66,6 @@ function openDialog(weekNumber) {
             })
             .catch(error => console.error('Error loading the event data:', error));
     }
-
 }
 
 // Closes the dialog
@@ -105,7 +94,7 @@ async function loadMap(coordinates) {
     const marker = new AdvancedMarkerElement({
         map: map,
         position: position,
-        title: "Event Location"  // Voit mukauttaa otsikkoa
+        title: "Event Location" 
     });
 }
 
@@ -114,8 +103,3 @@ function getCurrentWeekNumber(date) {
     const pastDaysOfYear = (date - firstDayOfYear + ((firstDayOfYear.getDay() + 6) % 7 * 86400000)) / 86400000;
     return Math.ceil((pastDaysOfYear + firstDayOfYear.getDay()) / 7);
 }
-
-document.getElementById('fake-date-toggle').addEventListener('change', function() {
-    const datePicker = document.getElementById('fake-date-picker');
-    datePicker.disabled = !this.checked;
-});
