@@ -2,13 +2,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const gridContainer = document.getElementById('calendar-grid');
     const totalCells = 33;
 
-    // Generate week grid cells
+    // Generoi viikkoruudut
     for (let i = 21; i <= totalCells; i++) {
         const cell = document.createElement('div');
         cell.classList.add('calendar-cell');
         cell.textContent = `Viikko ${i}`;
 
-        // Bind a click handler that checks condition before opening dialog
+        // Liitä klikkaustapahtumankäsittelijä, joka tarkistaa ehtoa ennen dialogin avaamista
         cell.onclick = function () {
             applyImageToCell(cell, i);
             openDialog(i);
@@ -24,29 +24,29 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function applyImageToCell(cell, index) {
     const currentWeekNumber = getCurrentWeekNumber(new Date());
-    // Correctly accessing the checkbox state
+    // Tarkista valintaruudun tila oikein
     let dateOk = document.getElementById('fake-date-toggle').checked;
 
-    // Condition to check if the current week number is greater than or equal to index or if the fake date is checked
+    // Ehto, joka tarkistaa, onko nykyinen viikkonumero suurempi tai yhtä suuri kuin indeksi tai onko valintaruutu valittuna
     if (currentWeekNumber >= index || dateOk) {
-        // Adding an image to the cell
-        const imageUrl = `Kalenteri_kuvat/${index}.png`; // Assuming this is the correct path
+        // Lisää kuva soluun
+        const imageUrl = `Kalenteri_kuvat/${index}.png`; // Olettaen, että tämä on oikea polku
         const imgElement = document.createElement('img');
         imgElement.src = imageUrl;
         imgElement.alt = 'Kuva viikolle ' + index;
 
-        // Apply CSS to ensure the image fits within the cell
-        imgElement.style.width = '100%';   // Makes the image width equal to the cell width
-        imgElement.style.height = 'auto';  // Keeps the image height proportional
-        imgElement.style.maxHeight = '100%'; // Ensures the image height does not exceed the cell height
+        // Aseta CSS varmistaaksesi, että kuva mahtuu soluun
+        imgElement.style.width = '100%';   // Kuva leveys on yhtä suuri kuin solun leveys
+        imgElement.style.height = 'auto';  // Kuva korkeus säilyy suhteellisena
+        imgElement.style.maxHeight = '100%'; // Kuva korkeus ei ylitä solun korkeutta
 
-        cell.innerHTML = ''; // Clear the cell content
-        cell.appendChild(imgElement); // Set the cell image to the image element
+        cell.innerHTML = ''; // Tyhjennä solun sisältö
+        cell.appendChild(imgElement); // Aseta solun kuva kuva-elementtiin
     }
 }
 
 
-// Opens a dialog with event information for the given week number
+// Avaa dialogi tapahtumatiedoin annetulle viikkonumerolle
 function openDialog(weekNumber) {
     const currentWeekNumber = getCurrentWeekNumber(new Date());
     let dateOk = document.getElementById('fake-date-toggle').checked;
@@ -59,42 +59,42 @@ function openDialog(weekNumber) {
 
                 document.getElementById('event-title').textContent = title;
                 document.getElementById('event-description').textContent = description;
-                document.getElementById('event-image').src = "Kalenteri_kuvat/" + weekNumber + ".png"; // esimerkki kuvapolusta
+                document.getElementById('event-image').src = "Kalenteri_kuvat/" + weekNumber + ".png";
 
                 document.getElementById('event-dialog').classList.replace('dialog-hidden', 'dialog-visible');
                 loadMap(coordinates);
             })
-            .catch(error => console.error('Error loading the event data:', error));
+            .catch(error => console.error('Virhe tapahtumatietojen lataamisessa:', error));
     }
 }
 
-// Closes the dialog
+// Sulje dialogi
 function closeDialog() {
     const dialog = document.getElementById('event-dialog');
     dialog.classList.replace('dialog-visible', 'dialog-hidden');
 }
 
-// Loads a map with the given coordinates
+// Lataa kartta annetuilla koordinaateilla
 async function loadMap(coordinates) {
     const [lat, lng] = coordinates.split(", ");
     const position = { lat: parseFloat(lat), lng: parseFloat(lng) };
 
-    // Request needed libraries.
+    // Pyydä tarvittavat kirjastot.
     const { Map } = await google.maps.importLibrary("maps");
     const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
 
-    // The map, centered at position
+    // Kartta, keskitettynä annettuihin koordinaatteihin
     map = new Map(document.getElementById("event-map"), {
         zoom: 15,
         center: position,
         mapId: "DEMO_MAP_ID",  // Vaihda DEMO_MAP_ID sopivaan arvoon
     });
 
-    // The marker, positioned at position
+    // Merkki, sijoitettuna annettuihin koordinaatteihin
     const marker = new AdvancedMarkerElement({
         map: map,
         position: position,
-        title: "Event Location" 
+        title: "Tapahtuman sijainti"
     });
 }
 
