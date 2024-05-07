@@ -97,14 +97,14 @@ async function loadMap(coordinates) {
   map = new Map(document.getElementById("event-map"), {
     zoom: 15,
     center: position,
-    mapId: "DEMO_MAP_ID",
+    mapId: "DEMO_MAP_ID", // Vaihda DEMO_MAP_ID sopivaan arvoon
   });
 
-  // Merkki, sijoitettuna annettuihin koordinaatteihin
+  // The marker, positioned at position
   const marker = new AdvancedMarkerElement({
     map: map,
     position: position,
-    title: "Tapahtuman sijainti",
+    title: "Event Location",
   });
 }
 
