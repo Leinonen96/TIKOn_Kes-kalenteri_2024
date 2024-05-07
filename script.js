@@ -27,7 +27,7 @@ function openDialog(weekNumber) {
 
         document.getElementById('event-title').textContent = title;
         document.getElementById('event-description').textContent = description;
-        document.getElementById('event-image').src = "path_to_images/" + weekNumber + ".jpg"; // esimerkki kuvapolusta
+        document.getElementById('event-image').src = "path_to_images/" + weekNumber + ".png"; // esimerkki kuvapolusta
 
         document.getElementById('event-dialog').classList.replace('dialog-hidden', 'dialog-visible');
         loadMap(coordinates);
