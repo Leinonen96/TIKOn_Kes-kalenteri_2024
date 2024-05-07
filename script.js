@@ -91,15 +91,21 @@ async function loadMap(coordinates) {
 
   // Pyytää tarvittavat kirjastot.
   const { Map } = await google.maps.importLibrary("maps");
+  const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
 
   // Kartta, keskitettynä annettuihin koordinaatteihin
-  Map = new Map(document.getElementById("event-map"), {
+  map = new Map(document.getElementById("event-map"), {
     zoom: 15,
     center: position,
     mapId: "DEMO_MAP_ID",
   });
 
   // Merkki, sijoitettuna annettuihin koordinaatteihin
+  const marker = new AdvancedMarkerElement({
+    map: map,
+    position: position,
+    title: "Tapahtuman sijainti",
+  });
 }
 
 // Palauttaa nykyisen viikon numeron annetulle päivämäärälle
